@@ -1,0 +1,16 @@
+package com.free.ThreadTest;
+
+//先创建一个Cinema 电影院
+
+public class Movie {
+	private String movie;
+	
+	public  void player(String movie){
+		this.movie = movie;
+	}
+	
+	public void watch(){
+		System.out.print(movie);
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.free.jichengANDgouzaoqidiaoyong;
+/*
+ * 测试组合
+ * @author Faron
+ */
+public class Animal2 {
+	String eye;
+	
+	public void run(){
+		System.out.println("run!");
+	}
+	public void eat(){
+		System.out.println("eat!");
+	}
+	public void sleep(){
+		System.out.println("zzz!");
+	}
+	
+	public Animal2(){
+		super();
+		System.out.println("new a animal!");
+	}
+}

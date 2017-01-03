@@ -1,0 +1,18 @@
+1.生成两个随机数 
+2.通过Thread.currentThread()得到当前线程。进而得到名字
+3.向控制台输出其名字
+4.对sleep（）的异常处理块  InterrruptedException e    ，e.getMessage()
+5.输出运算结果。
+
+
+main '
+runnable  通过匿名类创建runnable的实例
+
+实现runnable中的抽象方法run（）
+创建 giveAdding的实例
+调用giveAdding中用来做加法和sleep的方法  run方法结束
+使用runnable创建一个线程实例，名字是线程1-加法测试
+调用这个实例的start（）
+ 
+表示主线程结束
+

@@ -1,0 +1,55 @@
+package com.free.jichengANDgouzaoqidiaoyong;
+/*
+ * 测试组合
+ * @author Faron
+ */
+public class Animal2 {
+	String eye;
+	
+	public void run(){
+		System.out.println("run!");
+	}
+	public void eat(){
+		System.out.println("eat!");
+	}
+	public void sleep(){
+		System.out.println("zzz!");
+	}
+	
+	public Animal2(){
+		super();
+		System.out.println("new a animal!");
+	}
+}
+
+class Mammal2 {
+	Animal2 animal2;    // 有了这个属性以后，就可以通过animal2来调用Animal2中的所有方法了
+	public void taisheng(){
+		System.out.println("我是胎生");
+	}
+	
+}
+
+class Bird2 {
+	
+	Animal2 animal2;
+	
+	public void run(){         //方法的重载
+	//	super.run();    换成下面这句，效果是一样的
+	    animal2.run();    
+		System.out.println("哈哈，我重写了父类的方法，我就是不run！");
+	}
+	public void eggBirth(){
+		System.out.println("我在父类的基础上拓展了一个方法，卵生");
+	}
+	
+	public Bird2(){
+		//super();   //调用父类，也就是调用Animal类的构造方法
+		System.out.println("已完成调用Animal类的构造方法");
+	}
+	public static void main(String [] args){
+		Bird2 b2  = new Bird2();
+		b2.run();
+	}
+}
+

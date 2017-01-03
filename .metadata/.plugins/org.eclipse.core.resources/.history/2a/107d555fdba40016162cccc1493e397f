@@ -1,0 +1,11 @@
+package com.free.jichengANDgouzaoqidiaoyong;
+
+public class Test{
+	public static void main(String args[]){
+		Bird b = new Bird();
+		b.eggBirth();
+		b.run();
+		b.eat();
+	}
+   
+}

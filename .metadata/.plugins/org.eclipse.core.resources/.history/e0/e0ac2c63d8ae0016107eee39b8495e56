@@ -1,0 +1,82 @@
+package com.free.test;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import com.free.test.MyGameFrame.PaintThread;
+
+public class MyFrame extends Frame{
+	public static final int GAME_HEIGH = 500;
+	public static final int GAME_WIDTH = 500;
+	
+	
+	//加载图片
+	Image img = GameUtil.getImage("image/08.gif");
+	//加载窗口
+	public void launchFrame() {
+		setSize(GAME_HEIGH,GAME_WIDTH);
+		setLocation(200, 200);
+		setVisible(true);
+		
+		new PaintThread().start();
+		
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+				
+			}
+		});
+	}
+	
+	
+	private double x=10,y=10;
+	boolean left = false;
+	private double degree = 3.14/3;
+	private double speed = 30;
+	
+	public void paint(Graphics g) {
+		Font f = new Font("宋体",Font.BOLD,100);
+		g.setFont(f);
+		g.drawLine(100, 300, 100, 250);
+		g.drawRect(200, 200, 200, 200);
+		Color c  =  g.getColor();
+		g.setColor(Color.red);        //别人给你什么颜色，你给人家还的时候就是什么颜色
+		g.drawString("i love java", 200, 100);
+		g.fillOval(200, 200, 50, 20);
+        g.setColor(c);   //别人给你什么颜色，你给人家还的时候就是什么颜色
+        g.drawString("i love java", 300, 100);
+        g.drawImage(img,(int)x,(int)y,null);
+        
+        if(speed> 0){
+        	speed-=0.05;
+        }
+	   //运动
+		x +=speed*Math.cos(degree);y += speed*Math.sin(degree);
+       //边界判断 
+        if(y > 500-30||y < 30){
+        	degree = -degree;
+        }
+        if(x < 0||x > 500-30 ){
+        	degree = Math.PI-degree;
+        }
+	}
+	
+	class PaintThread extends Thread{ //这是一个内部类，定义重画窗口的线程类
+		public void run() {   //如何启动它？ 
+			while(true){
+				repaint();
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} 
+			}
+				
+		}
+	}
+}

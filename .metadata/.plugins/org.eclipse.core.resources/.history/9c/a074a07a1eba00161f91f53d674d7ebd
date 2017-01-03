@@ -1,0 +1,14 @@
+package com.free.ThreadTest;
+
+public class Watcher {
+	private Movie m;
+	
+	Watcher(Movie m){
+		super();
+		this.m = m;
+	}
+	
+   void run(){
+	   m.watch();
+   }
+}

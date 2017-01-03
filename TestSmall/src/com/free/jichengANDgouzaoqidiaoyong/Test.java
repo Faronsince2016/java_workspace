@@ -1,0 +1,13 @@
+package com.free.jichengANDgouzaoqidiaoyong;
+
+public class Test{
+	public static void main(String args[]){
+		Bird2 b = new Bird2();
+		b.run();  //此方法被子类所覆盖，直接调用Bird的覆盖后的run()
+		//b.eat();  //子类中没有此方法，则在其父类Animal中查找到
+		b.eggBirth();  //子类的方法---直接调用
+		b.toString();  //子类中没有，父类中也没有，再向上找到父类的父类中
+		b.animal2.eat();
+	}
+   
+}

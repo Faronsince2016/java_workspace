@@ -1,0 +1,15 @@
+package com.free.ThreadTest;
+
+public class ThreadApp {
+	public static void main(String args[]){
+	//创建一份资源
+	Movie m = new Movie();
+	//创建生产者和消费者
+	Player p = new Player(m);
+	Watcher w = new Watcher(m);
+
+	//多线程 匿名代理
+	new Thread(p).start();
+	new Thread(w).start();
+	}      	
+}

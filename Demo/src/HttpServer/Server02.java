@@ -10,15 +10,16 @@ import java.util.Date;
  */
 public class Server02 {
     private ServerSocket server;
-    private static final  String CRLF = "\n";
-    private static final  String BLANK = " ";
-    public static void main(String[] args){
+    private static final String CRLF = "\r\n";
+    private static final String BLANK = " ";
+
+    public static void main(String[] args) {
         Server02 svobj = new Server02();
         svobj.start();
     }
 
 
-    public void start(){
+    public void start() {
         try {
             server = new ServerSocket(9999);
             this.receive();
@@ -32,8 +33,8 @@ public class Server02 {
         BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String msg = null;//用来接收字符串
         StringBuilder sb = new StringBuilder();//用来装msg
-        while((msg = br.readLine()).length()>0){
-            sb.append(msg+"\n");
+        while ((msg = br.readLine()).length() > 0) {
+            sb.append(msg + "\n");
         }
 
         String RequestInfo = sb.toString().trim();

@@ -11,13 +11,14 @@ import java.net.Socket;
  */
 public class Server {
     private ServerSocket server;
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Server svobj = new Server();
         svobj.start();
     }
 
 
-    public void start(){
+    public void start() {
         try {
             server = new ServerSocket(8888);
             this.receive();
@@ -31,8 +32,8 @@ public class Server {
         BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String msg = null;//用来接收字符串
         StringBuilder sb = new StringBuilder();//用来装msg
-        while((msg = br.readLine()).length()>0){
-            sb.append(msg+"\n");
+        while ((msg = br.readLine()).length() > 0) {
+            sb.append(msg + "\n");
         }
 
         String RequestInfo = sb.toString().trim();

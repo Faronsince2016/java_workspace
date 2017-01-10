@@ -11,6 +11,7 @@ public class HttpServer {
     private ServerSocket server;
     private boolean isShutDown = false;
     public int len;
+
     public static void main(String[] args) {
         HttpServer svobj = new HttpServer();
         svobj.start(8888);
@@ -37,7 +38,7 @@ public class HttpServer {
         }
     }
 
-    private void stop(){
+    private void stop() {
         isShutDown = true;
         CloseUtil.CloseAll(server);
     }

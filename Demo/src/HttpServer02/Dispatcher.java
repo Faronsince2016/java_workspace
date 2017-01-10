@@ -13,7 +13,7 @@ public class Dispatcher implements Runnable {
     private Response rep;
     private int code = 200;
 
-    public Dispatcher(Socket socket){
+    public Dispatcher(Socket socket) {
         try {
             this.socket = socket;
             req = new Request(socket.getInputStream());
@@ -26,11 +26,10 @@ public class Dispatcher implements Runnable {
     }
 
 
-
     @Override
     public void run() {
         Servlet servlet = new Servlet();
-        servlet.service(rep,req);
+        servlet.service(rep, req);
 
         try {
             rep.PushToClient(code);

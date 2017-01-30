@@ -8,7 +8,14 @@ public class Person {
     public int age;
     public static  int test = 123;
 
-    public Person(){}
+    public Person(){
+        System.out.println(age);
+        System.out.println(this.name);
+    }
+    public Person(String names){
+        this.name  = names;
+
+    }
 
     public String getName() {
         return name;

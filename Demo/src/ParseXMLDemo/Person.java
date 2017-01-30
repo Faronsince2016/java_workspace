@@ -5,14 +5,16 @@ package ParseXMLDemo;
  */
 public class Person {
     private String name;
-    private int age;
+    private int age =10;
     public Person(){
+
     }
 
     public Person(String name ,int age){
         super();
         this.name = name;
         this.age = age;
+
     }
 
     public int getAge() {

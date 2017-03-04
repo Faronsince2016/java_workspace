@@ -23,9 +23,7 @@
 	</package>
 	
     <package name="admin" namespace="/admin" extends="bbs2009_default" >
-   		
-   		
-   		
+
    		<action name="index">
    			<result>/admin/index.html</result>
    		</action>

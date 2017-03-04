@@ -7,13 +7,13 @@ import com.bjsxt.bbs2009.service.CategoryService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CategoryAction extends ActionSupport {
-	private List<Category> categories;
+	private List<Category> categories;   //这个List需不需要get set？   为了在前台页面中访问。必须要
 	private CategoryService categoryService = new CategoryService(); 
-	private Category category;
-	private int id;
+	private Category category;           //可以每次new一个对象  每次传category.id   就是麻烦
+	private int id; //设置id属性    传参数的时候传入id就可以了  不用传入category.id
 	
 	public String list() throws Exception {
-		categories = categoryService.list();
+		categories = categoryService.list();   //不用new   使用list的时候就new了
 		return SUCCESS;
 	}
 	

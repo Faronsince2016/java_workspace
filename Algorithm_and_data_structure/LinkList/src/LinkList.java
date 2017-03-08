@@ -41,7 +41,7 @@ public class LinkList {
 
         //插入节点的时候 判断节点是否为空
 
-        if (isEmty()){
+        if (this.isEmty()){
             first = node;
             last =node;
         }else{

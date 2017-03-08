@@ -33,6 +33,7 @@ public class LinkList {
             System.out.println(current.names);
             System.out.println(current.np);
             System.out.println(current.next);
+            current = current.next;
         }
     }
 

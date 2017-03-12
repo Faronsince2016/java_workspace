@@ -1,5 +1,0 @@
-package com.bjsxt.sorm.core;
-
-public @interface SuppressWarning {
-
-}

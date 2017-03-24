@@ -9,7 +9,7 @@ public class TestService {
     void service(){
         System.out.println("父类的service被调用");
         doGet();   //这里的doGet调用的不是父类的doGet   而是子类的
-                   //父类的service是被子类所调用的  所以这里的doGet是在子类的内存中的  要想调用父类的  这里必须使用super.doGet() 
+                   //父类的service是被子类所调用的  所以这里的doGet是在子类的内存中的  要想调用父类的  这里必须使用super.doGet()
     }
 
     void doGet(){

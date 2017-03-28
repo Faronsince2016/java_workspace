@@ -233,3 +233,6 @@ Java Model Exception: Java Model Status [Unknown javadoc format for ApplicationA
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.jdt.core 4 1009 2017-03-28 19:53:05.328
 !MESSAGE Unknown javadoc format for ApplicationAssociate [in ApplicationAssociate.class [in com.sun.faces.application [in C:\soft\me\configure\plugins\com.genuitec.eclipse.j2eedt.core_8.5.0.me201003231033\data\libraryset\EE_5\jsf-impl.jar]]]
+
+!ENTRY org.eclipse.ui 4 4 2017-03-28 20:29:23.262
+!MESSAGE Part already exists in page layout: org.eclipse.debug.ui.ExpressionView.
